@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Date Night Menu</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Tonight's table</p>
+        <h1>Date Night Menu</h1>
+      </div>
+      <div class="status" id="status">Loading...</div>
+    </header>
+
+    <main class="shell">
+      <section class="menu-pane" aria-labelledby="menu-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Order</p>
+            <h2 id="menu-title">Pick what sounds good</h2>
+          </div>
+          <button class="ghost-button" id="clear-cart" type="button">Clear</button>
+        </div>
+
+        <div class="menu-list" id="menu-list"></div>
+      </section>
+
+      <aside class="order-pane" aria-labelledby="cart-title">
+        <div class="panel">
+          <p class="eyebrow">Her selection</p>
+          <h2 id="cart-title">Current order</h2>
+          <div class="cart-list" id="cart-list"></div>
+          <label class="note-label" for="order-note">Note</label>
+          <textarea id="order-note" rows="3" placeholder="Extra sauce, surprise me, etc."></textarea>
+          <button class="primary-button" id="send-order" type="button">Send order</button>
+        </div>
+
+        <div class="panel">
+          <div class="section-head tight">
+            <div>
+              <p class="eyebrow">For you</p>
+              <h2>Live order board</h2>
+            </div>
+            <div class="inline-actions">
+              <button class="ghost-button" id="refresh" type="button">Refresh</button>
+              <button class="ghost-button" id="clear-order" type="button">Clear</button>
+            </div>
+          </div>
+          <div class="received-order" id="received-order"></div>
+        </div>
+
+        <div class="panel">
+          <p class="eyebrow">Menu editor</p>
+          <h2>Add something new</h2>
+          <form class="menu-form" id="menu-form">
+            <input id="item-name" name="name" placeholder="Food name" autocomplete="off" required />
+            <input id="item-description" name="description" placeholder="Short description" autocomplete="off" />
+            <input id="item-price" name="price" placeholder="Price, optional" autocomplete="off" />
+            <button class="secondary-button" type="submit">Add item</button>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <template id="menu-item-template">
+      <article class="menu-item">
+        <div>
+          <h3></h3>
+          <p></p>
+          <span></span>
+        </div>
+        <div class="item-actions">
+          <button class="icon-button minus" type="button" aria-label="Remove one">-</button>
+          <output>0</output>
+          <button class="icon-button plus" type="button" aria-label="Add one">+</button>
+          <button class="remove-button" type="button">Remove</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

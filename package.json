@@ -1,0 +1,14 @@
+{
+  "name": "date-night-menu",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public --compatibility-date=2026-04-29",
+    "deploy": "wrangler pages deploy public",
+    "check": "node --check 'functions/api/[[path]].js'"
+  },
+  "devDependencies": {
+    "wrangler": "^4.14.0"
+  }
+}
